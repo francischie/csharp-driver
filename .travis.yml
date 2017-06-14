@@ -1,6 +1,7 @@
 language: csharp
+sudo: required
 mono: none
-dotnet: 1.0.2
+dotnet: 1.0.1
 dist: trusty
 
 branches:
@@ -12,4 +13,6 @@ branches:
 
 script:
   - dotnet restore src
-  - dotnet test src/Cassandra.Tests -c Release -f netcoreapp1.0
+  - dotnet build src/Cassandra.csproj -c Release -f netstandard1.5
+  - dotnet build src/Cassandra.Tests/Cassandra.Tests.csproj -c Release -f netcoreapp1.0
+  - dotnet test src/Cassandra.Tests/Cassandra.Tests.csproj -c Release -f netcoreapp1.0

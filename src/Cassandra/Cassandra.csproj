@@ -22,7 +22,7 @@
     <Product>DataStax C# Driver for Apache Cassandra</Product>
     <AssemblyOriginatorKeyFile>../../build/datastax.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
-    <PublicSign>false</PublicSign>
+    <PublicSign Condition="'$(OS)' != 'Windows_NT'">true</PublicSign>
     <PackageId>CassandraCSharpDriver</PackageId>
     <PackageTags>cassandra;apache;datastax;driver;client;database;nosql;dotnet;netcore;db</PackageTags>
     <PackageLicenseUrl>https://github.com/datastax/csharp-driver/blob/master/LICENSE</PackageLicenseUrl>
